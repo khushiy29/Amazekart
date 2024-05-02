@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazkart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assest/ecomm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+
+            <div class="nav-address">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option selected="selected">All</option> 
+                    <option>Baby</option>
+                    <option>Beauty &amp; Personal Care</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Home &amp; Kitchen</option>
+                    <option>Luggage</option>
+                    <option>Medicine</option>
+                    <option>Pet Care</option>
+                    <option>Sports &amp; Outdoors</option>
+                    <option>Tools &amp; Home Improvement</option>
+                    <option>Toys &amp; Games</option>
+                </select>
+                <input class="search-input" type="text" id="search-input" autocomplete="off" placeholder="Search....">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="nav-language">
+                <i class="fa-solid fa-globe"></i>
+                <select id="language-select">
+                    <option value="en" selected="selected">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="es">ES</option>
+                    <option value="de">DE</option>
+                    <option value="it">IT</option>
+                </select>
+            </div>
+
+            <div class="nav-signin">
+                <p><span id="greeting">Hello, sign in</span></p>
+            </div>
+            <div class="nav-returns">
+                <p><span>Returns</span></p>
+                <p class="nav-second">
+                    & Orders
+                    <i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+                </p>
+            </div>
+
+            <div class="nav-cart" onclick="cartpage()">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+            </div>
+        </div>
+
+        <div class="bottom-panel">
+            <div class="panel-alt">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-options">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+        </div>
+    </header>
+
+        <div class="dif">
+            <div class="bimg">
+                <div class="sc">
+                My Shopping Cart
+                </div>
+                <br>
+                <div id="output">
+                </div>
+            </div>
+            <div class="bimg1">
+                <div class="sc1">
+                Summary
+                </div>
+                <div style="margin-left: 14%;margin-top: 15%;">
+                    <div style="display: flex;align-items: center;">
+                        <div>
+                            Subtotal inc.Gst : 
+                        </div>
+                        <div style="margin-left: 1%;" id="subtotal"> 
+                        </div>
+                    </div>
+                    <div>
+                        Discount :
+                    </div>
+                    <div>
+                        <hr style="width:170pt">
+                        <div style="display: flex;align-items: center;">
+                            <div>
+                                Total : 
+                            </div>
+                            <div style="margin-left: 35%;" id="totalp"> 
+                            </div>
+                        </div>
+                        <hr style="width:170pt">    
+                    </div>
+                </div>
+                <br>
+                <div class="sc2">
+                    <button id="cout" type="button" onclick="checkout()" >Check Out</button>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+                <li>Get to Know Us</li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Amazkart Newsletter</a></li>
+                <li><a href="#">About Amazkart</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Press Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Amazkart Devices</a></li>
+                <li><a href="#">Amazkart Science</a></li>
+            </ul>
+            <ul>
+                <li>Make Money with Us</li>
+                <li><a href="#">Sell products on Amazkart</a></li>
+                <li><a href="#">Sell on Amazkart Business</a></li>
+                <li><a href="#">Sell apps on Amazkart</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Advertise Your Products</a></li>
+                <li><a href="#">Self-Publish with Us</a></li>
+                <li><a href="#">Host an Amazkart Hub</a></li>
+                <li><a href="#">See More Make Money with Us</a></li>
+            </ul>
+            <ul>
+                <li>Amazkart Payment Products</li>
+                <li><a href="#">Amzon Business Card</a></li>
+                <li><a href="#">Shop with Points</a></li>
+                <li><a href="#">Reload Your Balance</a></li>
+                <li><a href="#">Amazkart Currency Converter</a></li>
+            </ul>
+            <ul>
+                <li>Let Us Help You</li>
+                <li><a href="#">Amazkart and COVID-19</a></li>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Your Orders</a></li>
+                <li><a href="#">Shipping Rates & Policies</a></li>
+                <li><a href="#">Return & Replacements</a></li>
+                <li><a href="#">Manage Your Content and Devices</a></li>
+                <li><a href="#">Amazkart Assistant</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+
+        <div class="foot-panel3">
+            <div class="logo">
+
+            </div>
+        </div>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2023, Amazkart.com, Inc. or its affiliates
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        const languageSelect = document.getElementById("language-select");
+
+        languageSelect.addEventListener("change", function() {
+            const selectedLanguage = languageSelect.value;
+            console.log("Selected language: " + selectedLanguage);
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            var searchOptions = [
+                "Arts & Crafts",
+                "Automotive",
+                "Baby",
+                "Beauty & Personal Care",
+                "Books",
+                "Boys' Fashion",
+                "Computers",
+            ];
+
+            $("#search-input").autocomplete({
+                source: searchOptions,
+                autoFocus: true
+            });
+        });
+
+        let totalprice = 0;
+
+        $.ajax({method: 'POST',url: 'ecomm.php',data: { func: 'getlist' },success: function(result) {
+                let data = JSON.parse(result);
+                let html = `<table class="table table-striped">`;
+                html += `<tr>
+                            <td></td>
+                            <td style="width: 15%;">Product</td>
+                            <td></td>
+                            <td style="width: 35%;">Product Name</td>
+                            <td></td>
+                            <td style="width: 15%;">Price</td>
+                            <td style="width: 10%;">Quantity</td>
+                            <td></td>
+                            <td style="width: 15%;">Total</td>
+                        </tr>`;
+
+                for (z = 0; z < data.length; z++) {
+                let row = data[z];
+                let total = parseFloat(row.mrp) * parseFloat(row.qty);
+                totalprice += total;
+                html += `
+                    <tr data-serial="${row.cartID}">
+                        <td></td>
+                        <td class="tcover">
+                            <img style="height:120pt;width:100pt;margin-left:4%" src="${row.productimage}">
+                        </td>
+                        <td></td>
+                        <td class="tname">
+                            ${row.productname}<br>
+                            <i style="cursor:pointer" onclick="delb(this)" class="fa fa-trash"></i>
+                        </td>
+                        <td></td>
+                        <td class="tmrp">₹${row.mrp}</td>
+                        <td>
+                            <div style="display:flex;justify-content:space-between;">
+                                <div style="display:none;" class="quant">${row.quantity}</div>
+                                <div><button type="button" onclick="issue(this)">-</button></div>
+                                <div class="tk">${row.qty}</div>
+                                <div><button type="button" onclick="issue1(this)">+</button></div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td class="ttotal">₹${total.toFixed(2)}</td>
+                    </tr>`;
+                }
+                html += '</table>';
+                $('#output').html(html);
+                displayTotalPrice();
+            }
+        });
+
+        function displayTotalPrice() {
+        $('#subtotal').text(`₹${totalprice.toFixed(2)}`);
+        $('#totalp').text(`₹${totalprice.toFixed(2)}`);
+        }
+        
+        $(document).ajaxComplete(function() {
+        displayTotalPrice();
+        });
+
+        function delb(elem)
+        {
+        let tr=$(elem).closest('tr');
+        let srno=$(tr).data('serial');
+        let name=$(tr).find('.tname').text();
+            let text = "Are you sure you want to delete this Product?";
+
+            iziToast.show({
+                title: 'Confirm',
+                message: text,
+                position: 'center',
+                close: true,
+                overlay: true,
+                buttons: [
+                ['<button class="yes-button">Yes</button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    $.ajax({ method: 'POST', url: 'ecomm.php', data:{func:'delbook',srno}, success:function(result){
+                            $('#output').html( result );
+                        }
+                    });
+                }],
+                ['<button class="no-button">No</button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }]
+                ],                    
+            });   
+        }          
+
+        function issue(elem){
+            let tr=$(elem).closest('tr');
+            let srno=$(tr).data('serial');
+            let name=$(tr).find('.tname').text();
+            let qty=$(tr).find('.tk').text();
+            let quantity=$(tr).find('.quant').text();
+                if(qty==0){
+                    return;
+                }
+                else{
+                qty--;
+                quantity++;
+                }
+            $.ajax({ method: 'POST', url: 'ecomm.php', data:{func:'updbook',qty,srno,quantity}, success:function(result){
+                    $('#output').html( result );
+                }
+            });
+        }
+
+        function issue1(elem){
+            let tr=$(elem).closest('tr');
+            let srno=$(tr).data('serial');
+            let name=$(tr).find('.tname').text();
+            let qty=$(tr).find('.tk').text();
+            let quantity=$(tr).find('.quant').text();
+                qty++;
+                quantity--;
+            $.ajax({ method: 'POST', url: 'ecomm.php', data:{func:'updbook',qty,srno,quantity}, success:function(result){
+                    $('#output').html( result );
+                }
+            });
+        }
+        
+        function cartpage(){
+        window.location.href ='ecom.html'
+        }
+
+        function checkout(){
+        window.location.href ='shipment.html'
+        }
+
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('greeting').innerText = `Welcome ${userName}`;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazkart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./Assest/ecomm.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rY1q0UcD9UEz5Zkj6tC/jAzbrxTtqL2nU+MVLFLGzBqRljjIAUnYC3NUD1ZxpXMR" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <style>
+    #check {
+      text-align: center;
+      font-size: 22pt;
+    }
+    .sde {
+      margin-top: 4%;
+      margin-left: 4%;
+      font-size: 15pt;
+    }
+    .layout {
+      display: flex;
+      margin: 3% 10% 3% 4%;
+    }
+    .layout1 {
+      display: flex;
+      margin: 3% 4%;
+    }
+    .layout2 {
+      display: flex;
+      margin: 3% 10% 3% 4%;
+      align-items: center;
+      width: 70%;
+    }
+    .width {
+      width: 30%;
+      height: 40px;
+      font-size: 17px;
+      font-family: sans-serif;
+      margin-right: 20%;
+    }
+    .width:hover {
+      border: 3px solid #ff9327;
+    }
+    .width1 {
+      width: 75%;
+      height: 40px;
+      font-size: 17px;
+      font-family: sans-serif;
+    }
+    .width1:hover {
+      border: 3px solid #ff9327;
+    }
+    .width2 {
+      width: 30%;
+      height: 40px;
+      font-size: 17px;
+      font-family: sans-serif;
+    }
+    .width2:hover {
+      border: 3px solid #ff9327;
+    }
+    .grey {
+      color: gray;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+    .sc3 {
+      margin: 3% 10% 3% 4%;
+    }
+    .saving {
+      background-color: #ff9327;
+      border-radius: 5pt;
+      font-size: 16px;
+      font-family: sans-serif;
+      width: 18%;
+      height: 40px;
+      cursor: pointer;
+    }
+    .saving:hover {
+      background-color: #ffa954;
+      color: whitesmoke;
+      border-radius: 5pt;
+      font-size: 16px;
+      font-family: sans-serif;
+      width: 18%;
+      height: 40px;
+      cursor: pointer;
+    }
+    .radiopay {
+      margin: 3% 10% 3% 4%;
+    }
+    #payment {
+      display: none;
+    }
+    #card {
+      display: none;
+    }
+    #cod {
+      margin: 3% 10% 3% 4%;
+      display: none;
+    }
+    #upi {
+      display: none;
+    }
+    #thank-you-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+    }
+    #thank-you-popup .order-completion-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: slideIn 0.8s ease-in-out;
+      background-image: url(./Assest/output-onlinepngtools.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .order-completion-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .order-completion-header h2 {
+      font-size: 28px;
+      color: #007185;
+      margin: 0;
+    }
+    .order-details {
+      margin-bottom: 30px;
+    }
+    .order-details p {
+      margin: 0;
+      color: #555555;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .order-details .label {
+      font-weight: bold;
+    }
+    .order-details .value {
+      font-weight: bold;
+      color: #007185;
+    }
+    .success-message {
+      text-align: center;
+      color: #00bb00;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .thank-you-message {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .back-to-home {
+      text-align: center;
+    }
+    .back-to-home a {
+      color: #007185;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #007185;
+      color: #fff;
+      border-radius: 30px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .back-to-home a:hover {
+      background-color: #005063;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="nav-logo">
+        <div class="logo"></div>
+      </div>
+      <div class="nav-address">
+        <p class="add-first">Deliver to</p>
+        <div class="add-icon">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          <p class="add-second">India</p>
+        </div>
+      </div>
+      <div class="nav-search">
+        <select class="search-select">
+          <option selected="selected">All</option>
+          <option>Automotive</option>
+          <option>Baby</option>
+          <option>Beauty &amp; Personal Care</option>
+          <option>Electronics</option>
+          <option>Fashion</option>
+          <option>Home &amp; Kitchen</option>
+          <option>Luggage</option>
+          <option>Medicine</option>
+          <option>Pet Care</option>
+          <option>Sports &amp; Outdoors</option>
+          <option>Tools &amp; Home Improvement</option>
+          <option>Toys &amp; Games</option>
+        </select>
+        <input class="search-input" type="text" id="search-input" autocomplete="off" placeholder="Search....">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </div>
+      <div class="nav-language">
+        <i class="fa-solid fa-globe"></i>
+        <select id="language-select">
+          <option value="en" selected="selected">EN</option>
+          <option value="fr">FR</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="it">IT</option>
+        </select>
+      </div>
+      <div class="nav-signin">
+        <p><span id="greeting">Hello, sign in</span></p>
+    </div>
+      <div class="nav-returns">
+        <p><span>Returns</span></p>
+        <p class="nav-second">
+          & Orders
+          <i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+        </p>
+      </div>
+      <div class="nav-cart">
+        <i class="fa-solid fa-cart-shopping"></i> Cart
+      </div>
+    </div>
+    <div class="bottom-panel">
+      <div class="panel-alt">
+        <i class="fa-solid fa-bars"></i>
+        All
+      </div>
+      <div class="panel-options">
+        <p>Today's Deals</p>
+        <p>Customer Service</p>
+        <p>Registry</p>
+        <p>Gift Cards</p>
+        <p>Sell</p>
+      </div>
+      <div class="panel-deals">
+        Shop deals in Electronics
+      </div>
+    </div>
+  </header>
+  <p id="check">
+    Checkout
+  </p>
+  <div class="dif">
+    <div class="bimg">
+      <div id="shipping">
+        <p class="sde"> Shipping Details</p>
+        <div class="layout">
+          <input class="width" type="text" placeholder="First Name" />
+          <input class="width" type="text" placeholder="Last Name" />
+        </div>
+        <div class="layout1">
+          <input class="width1" type="text" placeholder="Address line 1" />
+        </div>
+        <div class="layout1">
+          <input class="width1" type="text" placeholder="Address line 2" />
+        </div>
+        <div class="layout">
+          <input class="width" type="text" placeholder="City" />
+          <input class="width" type="text" placeholder="State" />
+        </div>
+        <div class="layout">
+          <input class="width" type="text" placeholder="Email" />
+          <input class="width" type="text" placeholder="Phone No." />
+        </div>
+        <div class="sc3">
+          <button class="saving" id="ship" type="button" onclick="ship()"><b>Save & Next</b></button>
+        </div>
+      </div>
+      <div id="payment">
+        <p class="sde"> Payment Details</p>
+        <div class="radiopay">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" onclick="card()">
+            <label class="form-check-label" for="inlineRadio1">Card</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" onclick="cod()">
+            <label class="form-check-label" for="inlineRadio2">COD</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" onclick="upi()">
+            <label class="form-check-label" for="inlineRadio3">UPI</label>
+          </div>
+        </div>
+        <div id="card">
+          <div class="layout1">
+            <input class="width1" type="text" placeholder="Card Number" />
+          </div>
+          <div class="layout">
+            <select name="Month" class="width">
+              <option value="january">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+              <option value="december">December</option>
+            </select>
+            <select name="Year" class="width">
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+            </select>
+          </div>
+          <div class="layout2">
+            <input class="width2" type="text" placeholder="CVV" />
+            <p class="grey">(Last 3 or 4 digits of card strip)</p>
+          </div>
+          <div class="layout1">
+            <input class="width" type="text" placeholder="Card address Country" />
+          </div>
+          <div class="sc3">
+            <button class="saving" id="pay-card" type="button" onclick="pay()"><b>Place Order</b></button>
+          </div>
+        </div>
+        <div id="cod">
+          <div id="output10">
+          </div>
+          <div class="sc3">
+            <button class="saving" id="pay-cod" type="button" onclick="pay()"><b>Place Order</b></button>
+          </div>
+        </div>
+        <div id="upi" style="display: none;">
+          <div class="layout1">
+            <input class="width1" type="text" placeholder="UPI ID" />
+          </div>
+          <div class="sc3">
+            <button class="saving" id="pay-upi" type="button" onclick="pay()"><b>Place Order</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bimg1">
+      <div class="sc1">
+        Summary
+      </div>
+      <div style="margin-left: 14%;margin-top: 15%;">
+        <div style="display: flex;align-items: center;">
+          <div>
+            Subtotal inc.Gst :
+          </div>
+          <div style="margin-left: 1%;" id="subtotal">
+          </div>
+        </div>
+        <div>
+          Discount :
+        </div>
+        <div>
+          <hr style="width:170pt">
+          <div style="display: flex;align-items: center;">
+            <div>
+              Total :
+            </div>
+            <div style="margin-left: 35%;" id="totalp">
+            </div>
+          </div>
+          <hr style="width:170pt">
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <div id="thank-you-popup" style="display: none;">
+    <div class="order-completion-container">
+      <div class="order-completion-header">
+        <h2>Order Completed</h2>
+      </div>
+      <div class="order-details">
+        <span class="label">Order ID :</span>
+        <span class="value">ORD123456789</span><br><br>
+        <span class="label">Total Amount:</span>
+        <span class="value">$99.99</span><br><br>
+        <span class="label">Delivery Date:</span>
+        <span class="value">July 25, 2023</span>
+      </div>
+      <div class="success-message">
+        <p>Your order has been successfully completed!</p>
+      </div>
+      <div class="thank-you-message">
+        <p>Thank you for your purchase!</p>
+      </div>
+      <div class="back-to-home">
+        <a href="homepage.html">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="foot-panel1">
+      Back to Top
+    </div>
+    <div class="foot-panel2">
+      <ul>
+        <li>Get to Know Us</li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Amazkart Newsletter</a></li>
+        <li><a href="#">About Amazkart</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Press Center</a></li>
+        <li><a href="#">Investor Relations</a></li>
+        <li><a href="#">Amazkart Devices</a></li>
+        <li><a href="#">Amazkart Science</a></li>
+      </ul>
+      <ul>
+        <li>Make Money with Us</li>
+        <li><a href="#">Sell products on Amazkart</a></li>
+        <li><a href="#">Sell on Amazkart Business</a></li>
+        <li><a href="#">Sell apps on Amazkart</a></li>
+        <li><a href="#">Become an Affiliate</a></li>
+        <li><a href="#">Advertise Your Products</a></li>
+        <li><a href="#">Self-Publish with Us</a></li>
+        <li><a href="#">Host an Amazkart Hub</a></li>
+        <li><a href="#">See More Make Money with Us</a></li>
+      </ul>
+      <ul>
+        <li>Amazkart Payment Methods</li>
+        <li><a href="#">Amazkart Business Card</a></li>
+        <li><a href="#">Shop with Points</a></li>
+        <li><a href="#">Reload Your Balance</a></li>
+        <li><a href="#">Amazkart Currency Converter</a></li>
+      </ul>
+      <ul>
+        <li>Let Us Help You</li>
+        <li><a href="#">Amazkart and COVID-19</a></li>
+        <li><a href="#">Shipping Rates &amp; Policies</a></li>
+        <li><a href="#">Returns &amp; Replacements</a></li>
+        <li><a href="#">Manage Your Content and Devices</a></li>
+        <li><a href="#">Amazkart Assistant</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+    <div class="foot-panel3">
+      <div>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div>
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Interest-Based Ads</a>
+        <a href="#">© 2023-2025, Amazkart.com, Inc. or its affiliates</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+  <script>
+    function displaydiv(divtoshow = '') {
+      $("#payment").hide();
+      $("#shipping").hide();
+      if (divtoshow !== '') {
+        $(`#${divtoshow}`).show();
+      }
+    }
+  
+    function ship() {
+      var firstName = document.querySelector("#shipping input[placeholder='First Name']").value;
+      var lastName = document.querySelector("#shipping input[placeholder='Last Name']").value;
+      var address1 = document.querySelector("#shipping input[placeholder='Address line 1']").value;
+      var address2 = document.querySelector("#shipping input[placeholder='Address line 2']").value;
+      var city = document.querySelector("#shipping input[placeholder='City']").value;
+      var state = document.querySelector("#shipping input[placeholder='State']").value;
+      var email = document.querySelector("#shipping input[placeholder='Email']").value;
+      var phone = document.querySelector("#shipping input[placeholder='Phone No.']").value;
+      if (firstName === "" || lastName === "" || address1 === "" || address2 === "" || city === "" || state === "" || email === "" || phone === "") {
+        iziToast.warning({
+          title: "Warning",
+          message: "Please fill in all the shipping details.",
+          position: "topRight",
+        });
+      } else {
+        displaydiv("payment");
+      }
+    }
+  
+    function displaydiv2(divtoshow = '') {
+      $("#card").hide();
+      $("#cod").hide();
+      $("#upi").hide();
+      if (divtoshow !== '') {
+        $(`#${divtoshow}`).show();
+      }
+    }
+  
+    function card() {
+      displaydiv2('card');
+    }
+  
+    function cod() {
+      displaydiv2('cod');
+    }
+  
+    function upi() {
+      displaydiv2('upi');
+    }
+  
+    function displayThankYouMessage() {
+      $("#thank-you-popup").fadeIn();
+    }
+  
+    function pay() {
+      var cardNumber = document.querySelector("#card input[placeholder='Card Number']").value;
+      var cardMonth = document.querySelector("#card select[name='Month']").value;
+      var cardYear = document.querySelector("#card select[name='Year']").value;
+      var cardCVV = document.querySelector("#card input[placeholder='CVV']").value;
+      var cardCountry = document.querySelector("#card input[placeholder='Card address Country']").value;
+      if (cardNumber === "" || cardMonth === "" || cardYear === "" || cardCVV === "" || cardCountry === "") {
+        iziToast.warning({
+          title: "Warning",
+          message: "Please fill in all the payment details.",
+          position: "topRight",
+        });
+      } else {
+        displayThankYouMessage();
+      }
+    }
+  
+    const userName = localStorage.getItem('userName');
+    if (userName) {
+      document.getElementById('greeting').innerText = `Hello, ${userName}`;
+    }
+  </script>
+  <script>
+    const languageSelect = document.getElementById("language-select");
+    function redirectToSubcategoryPage(productId, categoryId) {
+        window.location.href = `subcategory.html?id=${productId}&category=${categoryId}`;
+    }
+
+    languageSelect.addEventListener("change", function () {
+        const selectedCategory = languageSelect.value;
+        const categoryMap = {
+            "Baby": 1,
+            "Beauty & Personal Care": 2,
+            "Electronics": 3,
+            "Fashion": 4,
+            "Home & Kitchen": 5,
+            "Luggage": 6,
+            "Medicine": 7,
+            "Pet Care": 8,
+            "Sports & Outdoors": 9,
+            "Tools & Home Improvement": 10,
+            "Toys & Games": 11,
+        };
+        const categoryId = categoryMap[selectedCategory];
+
+        redirectToSubcategoryPage("", categoryId);
+    });
+
+    $(document).ready(function () {
+
+        var searchOptions = [
+            "All",
+            "Baby",
+            "Beauty & Personal Care",
+            "Electronics",
+            "Fashion",
+            "Home & Kitchen",
+            "Luggage",
+            "Medicine",
+            "Pet Care",
+            "Sports & Outdoors",
+            "Tools & Home Improvement",
+            "Toys & Games",
+        ];
+
+        $("#search-input").autocomplete({
+            source: searchOptions,
+            autoFocus: true,
+            select: function(event, ui) {
+                const selectedCategory = ui.item.value;
+                if (selectedCategory !=="All") {
+                    const categoryId = searchOptions.indexOf(selectedCategory);
+                    const url = `subcategory.html?id=${categoryId}`;
+                    window.location.href = url;
+                }
+            }
+        });
+    })
+</script>
+<script>
+  let totalprice = 0;
+
+$.ajax({method: 'POST',url: 'ecomm.php',data: { func: 'getlistprod' },success: function(result) {
+let data = JSON.parse(result);
+
+for (z = 0; z < data.length; z++) {
+  let row = data[z];
+  let total = parseFloat(row.mrp) * parseFloat(row.qty);
+  totalprice += total;
+}
+displayTotalPrice();
+}
+});
+
+function displayTotalPrice() {
+$('#subtotal').text(`₹${totalprice.toFixed(2)}`);
+$('#totalp').text(`₹${totalprice.toFixed(2)}`);
+}
+
+// Call the separate function after the AJAX request is complete
+$(document).ajaxComplete(function() {
+displayTotalPrice();
+});ss
+</script>
+  
+</body>
+</html>

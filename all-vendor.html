@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vendor Log-In</title>
+  <link rel="stylesheet" href="./Assest/style-login.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izimodal/css/iziModal.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="d-flex flex-row justify-content-center">
+      <div class="row">
+        <div class="col-md">
+          <img class="img_1" src="./Assest/amazkart-logo.png" alt="Amazon Logo" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="d-flex flex-row justify-content-center">
+    <div class="row">
+      <div class="col-md">
+        <form id="vendor-login-form">
+          <div class="sign-in mb-2">Vendor Sign In</div><br>
+          <div class="form-group">
+            <label id="words_1" class="mt-0">Enter Your Phone Number</label>
+            <input type="text" class="form-control" id="vendorphone" placeholder="Enter Phone Number">
+          </div>
+          <div class="form-group">
+            <label id="words_2">Password</label>
+            <input type="password" class="form-control" id="vendorpassword" placeholder="Password">
+            <div class="form-group">
+              <button type="button" class="btn btn-warning" id="vendor-sign-in">Sign In</button><br>
+              <p class="keep-sign-in" style="margin-left: 0;"><a href="#">Forgot your password?</a></p>
+            </div>
+          </div>
+          <div class="form-check">
+          </div>
+          <div class="text-center">
+            <p class="new-to-amazkart">New to Amazkart</p>
+          </div>
+          <button type="button" class="btn btn-warning mt-2" id="create-account-button">Create your Vendor's
+            account</button><br><br>
+          <p style="margin-left: 0;"><a href="all-user.html">Are You a Customer ?</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row justify-content-center">
+    <div class="row">
+      <div class="col-md">
+        <form id="vendor-registration-form" style="display: none;">
+          <div class="sign-in mb-2">Create a Vendor Account</div><br>
+          <div class="form-group">
+            <label id="words_1">Your Name</label>
+            <input type="text" class="form-control" id="newname" placeholder="First and Last Name">
+          </div>
+          <div class="form-group">
+            <label id="words_1">Mobile Number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <select class="custom-select" id="countrycode">
+                  <option selected>+91</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                </select>
+              </div>
+              <input type="text" class="form-control" id="newnumber" placeholder="Mobile Number">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="words_2">Password</label>
+            <input type="password" class="form-control" id="newpassword" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="gstnumber">GST Number</label>
+            <input type="text" class="form-control" id="gstnumber" placeholder="GST Number">
+          </div>
+          <div class="form-group">
+            <label for="pannumber">PAN Card Number</label>
+            <input type="text" class="form-control" id="pannumber" placeholder="PAN Card Number">
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-warning btn-block" id="register">Register</button>
+          </div>
+          <div class="text-center">
+            <p class="new-to-amazkart">Already a Seller ?</p>
+          </div>
+          <button type="button" class="btn btn-warning btn-block mt-2" id="sign-in-button">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="vendor-bank-details-form" style="display: none;">
+    <div class="container">
+      <form id="vendor-details-form">
+        <h2>Enter Your Bank Details</h2>
+        <div class="form-group">
+          <label for="bank-name">Bank Name</label>
+          <input type="text" class="form-control" id="bank-name" placeholder="Enter Bank Name">
+        </div>
+        <div class="form-group">
+          <label for="account-name">Account Name</label>
+          <input type="text" class="form-control" id="account-name" placeholder="Enter Account Name">
+        </div>
+        <div class="form-group">
+          <label for="account-number">Account Number</label>
+          <input type="text" class="form-control" id="account-number" placeholder="Enter Account Number">
+        </div>
+        <div class="form-group">
+          <label for="IFSC-code">Bank IFSC code</label>
+          <input type="text" class="form-control" id="IFSC-code" placeholder="Enter IFSC code">
+        </div>
+        <div class="form-group">
+          <label for="business-name">Business Name</label>
+          <input type="text" class="form-control" id="business-name" placeholder="Enter Business Name">
+        </div>
+        <div class="form-group">
+          <label for="business-address">Business Address</label>
+          <input type="text" class="form-control" id="business-address" placeholder="Enter Business Address">
+        </div>
+        <div class="form-group">
+          <label for="business-phone">Business Phone</label>
+          <input type="text" class="form-control" id="business-phone" placeholder="Enter Business Phone">
+        </div>
+        <div class="form-group">
+          <label for="business-email">Business Email</label>
+          <input type="email" class="form-control" id="business-email" placeholder="Enter Business Email">
+        </div>
+        <button type="button" class="btn btn-primary" id="submit-bank-details-button">Submit Bank Details</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var phoneNumber;
+    var name;
+    var password;
+    var gstNumber;
+    var panNumber;
+  
+    function showVendorRegistrationForm() {
+      document.getElementById("vendor-login-form").style.display = "none";
+      document.getElementById("vendor-registration-form").style.display = "block";
+    }
+  
+    function showVendorLoginForm() {
+      document.getElementById("vendor-login-form").style.display = "block";
+      document.getElementById("vendor-registration-form").style.display = "none";
+    }
+  
+    document.getElementById("create-account-button").addEventListener("click", showVendorRegistrationForm);
+    document.getElementById("sign-in-button").addEventListener("click", showVendorLoginForm);
+  
+    document.getElementById("vendor-sign-in").addEventListener("click", function () {
+      var phoneNumber = document.getElementById("vendorphone").value;
+      var password = document.getElementById("vendorpassword").value;
+  
+      if (phoneNumber === "" || password === "") {
+        iziToast.warning({
+          title: "Warning",
+          message: "Please enter all the vendor login details!",
+          position: "topRight",
+        });
+      } else {
+        var xhr = new XMLHttpRequest();
+        var url = "all.php";
+  
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              var response = xhr.responseText.trim();
+              if (response === "not_exists") {
+                iziToast.error({
+                  title: "Error",
+                  message: "Vendor Doesn't Exist.",
+                  position: "topRight",
+                });
+              } else if (response === "error") {
+                iziToast.error({
+                  title: "Error",
+                  message: "Failed to fetch vendor data. Please try again later.",
+                  position: "topRight",
+                });
+              } else {
+                iziToast.success({
+                  title: "Success",
+                  message: "Welcome back " + response + "!",
+                  position: "topRight",
+                  onClosed: function () {
+                    window.location.href = 'product-add.html';
+                  },
+                });
+              }
+            } else {
+              iziToast.error({
+                title: "Error",
+                message: "Failed to fetch vendor data. Please try again later.",
+                position: "topRight",
+              });
+            }
+          }
+        };
+  
+        var data = "func=vendorlogin&phone_number=" + phoneNumber + "&password=" + password;
+        xhr.send(data);
+      }
+    });
+  
+    document.getElementById("register").addEventListener("click", function () {
+      name = document.getElementById("newname").value;
+      phoneNumber = document.getElementById("newnumber").value;
+      password = document.getElementById("newpassword").value;
+      gstNumber = document.getElementById("gstnumber").value;
+      panNumber = document.getElementById("pannumber").value;
+  
+      $.ajax({
+        url: 'all.php',
+        method: 'POST',
+        data: {
+          func: 'vendorlogin',
+          phone_number: phoneNumber,
+        },
+        success: function (response) {
+          if (response === "not_exists") {
+            document.getElementById("vendor-registration-form").style.display = "none";
+            document.getElementById("vendor-bank-details-form").style.display = "block";
+          } else if (response === "error") {
+            iziToast.error({
+              title: "Error",
+              message: "Failed to fetch vendor data. Please try again later.",
+              position: "topRight",
+            });
+          } else {
+            iziToast.error({
+              title: "Error",
+              message: "Vendor Already Exists.",
+              position: "topRight",
+            });
+          }
+        },
+        error: function () {
+          iziToast.error({
+            title: "Error",
+            message: "Failed to check vendor data. Please try again later.",
+            position: "topRight",
+          });
+        },
+      });
+    });
+  
+    document.getElementById("submit-bank-details-button").addEventListener("click", function () {
+      var bankName = document.getElementById("bank-name").value;
+      var accountName = document.getElementById("account-name").value;
+      var accountNumber = document.getElementById("account-number").value;
+      var bankIFSC = document.getElementById("IFSC-code").value;
+      var businessName = document.getElementById("business-name").value;
+      var businessAddress = document.getElementById("business-address").value;
+      var businessPhone = document.getElementById("business-phone").value;
+      var businessEmail = document.getElementById("business-email").value;
+  
+      $.ajax({
+        url: 'all.php',
+        method: 'POST',
+        data: {
+          func: 'registerVendor',
+          username: name,
+          phone_number: phoneNumber,
+          password: password,
+          gst_number: gstNumber,
+          pan_number: panNumber,
+          bank_name: bankName,
+          account_name:accountName,
+          account_number: accountNumber,
+          bank_ifsc: bankIFSC,
+          business_name: businessName,
+          business_address: businessAddress,
+          business_phone: businessPhone,
+          business_email: businessEmail,
+        },
+        success: function (response) {
+          if (response === "success") {
+            iziToast.success({
+              title: "Success",
+              message: "Vendor Registration successful!",
+              position: "topRight",
+              onClosed: function () {
+                window.location.replace("Product-add.html");
+              },
+            });
+          } else if (response === "error") {
+            iziToast.error({
+              title: "Error",
+              message: "Failed to register vendor. Please try again later.",
+              position: "topRight",
+            });
+          } else if (response === "user_exists") {
+            iziToast.error({
+              title: "Error",
+              message: "Vendor Already Exists.",
+              position: "topRight",
+            });
+          }
+        },
+        error: function () {
+          iziToast.error({
+            title: "Error",
+            message: "Failed to register vendor. Please try again later.",
+            position: "topRight",
+          });
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>

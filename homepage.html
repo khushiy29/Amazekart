@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazkart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./Assest/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+
+            <div class="nav-address">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option selected="selected">All</option>
+                    <option>Baby</option>
+                    <option>Beauty &amp; Personal Care</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Home &amp; Kitchen</option>
+                    <option>Luggage</option>
+                    <option>Medicine</option>
+                    <option>Pet Care</option>
+                    <option>Sports &amp; Outdoors</option>
+                    <option>Tools &amp; Home Improvement</option>
+                    <option>Toys &amp; Games</option>
+                  </select>
+                <input class="search-input" type="text" id="search-input" autocomplete="off" placeholder="Search....">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="nav-language">
+                <i class="fa-solid fa-globe"></i>
+                <select id="language-select">
+                    <option value="en" selected="selected">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="es">ES</option>
+                    <option value="de">DE</option>
+                    <option value="it">IT</option>
+                </select>
+            </div>
+
+            <div class="nav-signin">
+                <p><span id="greeting"><a href="all-user.html">Hello, sign in</a></span></p>
+            </div>
+            <div class="nav-returns">
+                <p><span>Returns</span></p>
+                <p class="nav-second">
+                    & Orders
+                    <i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+                </p>
+            </div>
+
+            <div class="nav-cart" onclick="cartpage()">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+            </div>
+        </div>
+
+        <div class="bottom-panel">
+            <div class="panel-alt">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-options">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-msg">
+            <p>You are on Amazkart.com. You can also shop on Amazkart India for millions of products with fast local
+                delivery. <a href="https://www.Amazkart.in/">Click here to go to Amazkart.in</a></p>
+        </div>
+    </div>
+
+    <div class="shop-section">
+        <div class="box1 box" data-serial="3" data-category="3">
+            <div class="box-content">
+                <h2>Electronics</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/51i4ZFYLgHL.SX679.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box2 box" data-serial="9" data-category="9">
+            <div class="box-content">
+                <h2>Sports & Outdoors</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/71Ol2dtGVbL.SL1500.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box3 box" data-serial="7" data-category="7">
+            <div class="box-content">
+                <h2>Medicine</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/71Rp2LXFvWL.SX522.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box4 box" data-serial="5" data-category="5">
+            <div class="box-content">
+                <h2>Home & Kitchen</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/41LCxkLaHxL.SY355.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box1 box" data-serial="2" data-category="2">
+            <div class="box-content">
+                <h2>Beauty & Personal Care</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/61xJTtVzfmL.SX522.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box2 box" data-serial="8" data-category="8">
+            <div class="box-content">
+                <h2>Pet Care</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/51zvm+uy6uL.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box3 box" data-serial="11" data-category="11">
+            <div class="box-content">
+                <h2>Toys and Video Games</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/61u+qf-lbUL.SX355.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box4 box" data-serial="4" data-category="4">
+            <div class="box-content">
+                <h2>Discover Fashion Trends</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/7178PYDgibL.UY550.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box1 box" data-serial="1" data-category="1">
+            <div class="box-content">
+                <h2>Baby Care</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/51kDtwOcl7S.SX679.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box2 box" data-serial="10" data-category="10">
+            <div class="box-content">
+                <h2>Tools and Home Improvement</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/71DxsakDC3L.SY450.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+        <div class="box3 box" data-serial="6" data-category="6">
+            <div class="box-content">
+                <h2>Luggage</h2>
+                <div class="box-img" style="background-image: url(https://m.media-amazon.com/images/I/61-SNkMcaqL.UX522.jpg);"></div>
+                <p>See More</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+                <li>Get to Know Us</li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Amazkart Newsletter</a></li>
+                <li><a href="#">About Amazkart</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Press Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Amazkart Devices</a></li>
+                <li><a href="#">Amazkart Science</a></li>
+            </ul>
+            <ul>
+                <li>Make Money with Us</li>
+                <li><a href="#">Sell products on Amazkart</a></li>
+                <li><a href="#">Sell on Amazkart Business</a></li>
+                <li><a href="#">Sell apps on Amazkart</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Advertise Your Products</a></li>
+                <li><a href="#">Self-Publish with Us</a></li>
+                <li><a href="#">Host an Amazkart Hub</a></li>
+                <li><a href="#">See More Make Money with Us</a></li>
+            </ul>
+            <ul>
+                <li>Amazkart Payment Products</li>
+                <li><a href="#">Amzon Business Card</a></li>
+                <li><a href="#">Shop with Points</a></li>
+                <li><a href="#">Reload Your Balance</a></li>
+                <li><a href="#">Amazkart Currency Converter</a></li>
+            </ul>
+            <ul>
+                <li>Let Us Help You</li>
+                <li><a href="#">Amazkart and COVID-19</a></li>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Your Orders</a></li>
+                <li><a href="#">Shipping Rates & Policies</a></li>
+                <li><a href="#">Return & Replacements</a></li>
+                <li><a href="#">Manage Your Content and Devices</a></li>
+                <li><a href="#">Amazkart Assistant</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+
+        <div class="foot-panel3">
+            <div class="logo">
+            </div>
+        </div>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2023, Amazkart.com, Inc. or its affiliates
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        const languageSelect = document.getElementById("language-select");
+        function redirectToSubcategoryPage(productId, categoryId) {
+            window.location.href = `subcategory.html?id=${productId}&category=${categoryId}`;
+        }
+
+        languageSelect.addEventListener("change", function () {
+            const selectedCategory = languageSelect.value;
+            const categoryMap = {
+                "Baby": 1,
+                "Beauty & Personal Care": 2,
+                "Electronics": 3,
+                "Fashion": 4,
+                "Home & Kitchen": 5,
+                "Luggage": 6,
+                "Medicine": 7,
+                "Pet Care": 8,
+                "Sports & Outdoors": 9,
+                "Tools & Home Improvement": 10,
+                "Toys & Games": 11,
+            };
+            const categoryId = categoryMap[selectedCategory];
+
+            redirectToSubcategoryPage("", categoryId);
+        });
+
+        $(document).ready(function () {
+
+            var searchOptions = [
+                "All",
+                "Baby",
+                "Beauty & Personal Care",
+                "Electronics",
+                "Fashion",
+                "Home & Kitchen",
+                "Luggage",
+                "Medicine",
+                "Pet Care",
+                "Sports & Outdoors",
+                "Tools & Home Improvement",
+                "Toys & Games",
+            ];
+
+            $("#search-input").autocomplete({
+                source: searchOptions,
+                autoFocus: true,
+                select: function(event, ui) {
+                    const selectedCategory = ui.item.value;
+                    if (selectedCategory !=="All") {
+                        const categoryId = searchOptions.indexOf(selectedCategory);
+                        const url = `subcategory.html?id=${categoryId}`;
+                        window.location.href = url;
+                    }
+                }
+            });
+        
+            const productBoxes = document.querySelectorAll(".box");
+            productBoxes.forEach(box => {
+                box.addEventListener("click", function () {
+                    const productId = box.dataset.serial;
+                    const categoryId = box.dataset.category;
+                    redirectToSubcategoryPage(productId, categoryId);
+                });
+            });
+        });
+
+        function cartpage(){
+                window.location.href ='cart.html'
+        }
+
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('greeting').innerText = `Welcome ${userName}`; 
+        }
+    </script>
+</body>
+</html>

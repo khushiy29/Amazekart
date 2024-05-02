@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 100px;
+}
+
+.logo {
+    background-image: url(./amazkart-logo.png);
+    height: 50px;
+    width: 100%;
+    background-size: cover;
+}
+
+.add-first {
+    color: #cccccc;
+    font-size: 0.75rem;
+    font-weight: 100;
+}
+
+.nav-second {
+    font-size: 15px;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    margin-left: 25px;
+    width: 600px;
+    height: 40px;
+    padding: 10px 0px 10px 0px;
+    border-radius: 30px;
+}
+
+.nav-search:hover {
+    border: 2px solid #febd68;
+}
+
+.search-select {
+    background-color: #f3f3f3;
+    height: 40px;
+    width: 70px;
+    padding: 0 0 0 10px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 2px solid #ff9327;
+    outline: none;
+}
+
+.search-input {
+    margin-left: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 60px;
+    height: 40px;
+    background-color: #ff9327;
+    color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.nav-signin span {
+    font-size: 0.75rem;
+}
+
+.nav-returns span{
+    font-size: 0.75rem;
+}
+
+.nav-cart {
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.nav-cart i {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.bottom-panel {
+    height: 40px;
+    background-color: #222f3d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.panel-options {
+    width: 70%;
+    font-size: 0.85rem;
+}
+
+.panel-options p {
+    display: inline;
+    margin-left: 10px;
+}
+
+.hero-section {
+    background-image: url(https://images-eu.ssl-images-amazon.com/images/G/31/img21/OHL/PD23/launches/GW/Hero/PC_Hero_3000x1200_2x._CB601321240_.jpg);
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-msg {
+    height: 40px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    width: 90%;
+    margin-bottom: 25px;
+    border-radius: 30px;
+}
+
+.hero-msg a {
+    text-decoration: none;
+    color: #007185;
+}
+
+.shop-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #e2e7e6;
+    padding-bottom: 20px;
+}
+
+.shop-section .box {
+    border-radius: 10px;
+    height: 410px;
+    width: 23%;
+    background-color: white;
+    padding: 15px 0px 15px;
+    margin-top: 25px;
+}
+
+.shop-section .box .fullbox{
+    border-radius: 10px;
+    height: 450px;
+    width: 23%;
+    background-color: white;
+}
+
+.shop-section h2 {
+    font-size: 20px;
+}
+
+.shop-section .box .box-img {
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-size: cover;
+}
+
+.shop-section .box .box-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.shop-section .box .box-content p {
+    color: #007185;
+    font-size: 14px;
+}
+
+
+/***********************************************************************************************************************************/
+
+
+/*FOOTER*/
+
+.foot-panel1 {
+    background-color: #37475a;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.foot-panel2 ul {
+    margin-top: 30px;
+}
+
+.foot-panel2 ul li,
+li a {
+    display: block;
+    text-decoration: none;
+    list-style: none;
+}
+
+.foot-panel2 li a {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.foot-panel2 li a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel3 {
+    border-top: 0.5px solid gray;
+    height: 70px;
+    background-color: #232F3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-panel3 .logo {
+    background-image: url(./amazkart-logo.png);
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+}
+
+.foot-panel4 {
+    background-color: #131A22;
+    color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foot-panel4 .pages a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.foot-panel4 .pages a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+a,.box-content {
+    cursor: pointer;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    max-width: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.ui-autocomplete .ui-menu-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ui-autocomplete .ui-menu-item:hover {
+    background-color: #f4f4f4;
+}
+
+
+/****************************************************************************************************************************/
+
+
+/*PRODUCT PAGE*/
+
+
+#product-info {
+    display: flex;
+    width: 95%;
+    margin: 0 auto
+}
+
+.item-image-parent {
+    
+    width: 50%;
+    display: flex;
+}
+
+.item-info-parent {
+    width: 50%;
+}
+
+.item-list-vertical {
+    order: 1;
+    width: 10%;
+    overflow-y: auto;
+    margin-top: 50px;
+}
+
+.item-image-lists{
+    display: flex;
+}
+
+.item-image-main {
+    order: 2;
+    width: 90%;
+    height: 100%;
+    margin: 7% 5% 0%;
+}
+
+/* sectioning completed */
+
+
+.thumb-box {
+    width: 75%;
+    margin: 10px auto;
+    background: white;
+    border: 1px solid gray;
+}
+.thumb-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.item-image-main img {
+    width: 100%;
+    height: auto;
+}
+
+.thumb-box:hover {
+    cursor: pointer;
+    border-color: #e77600;;
+    box-shadow: 0px 1px 5px 1px #e77600;
+}
+
+/* Item Info */
+
+.main-info{
+    margin-left : 15px;
+    margin-top: 7%;
+}
+
+.main-info h4{
+    font-size: 21px;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.star-rating {
+    width: 70%;
+    color: gray;
+    font-size: 24px;
+    border-bottom: 0.4px solid rgba(194, 194, 194, 0.829);
+}
+
+.star-rating span {
+    color: gold;
+}
+
+.rates{
+    margin: 5px;
+}
+
+.main-info p {
+    font-size: 15px;
+    color: gray;
+}
+
+#price {
+    color: rgb(168, 14, 14);
+    font-size: 21px;
+}
+
+.offers{
+    display: flex;
+    justify-content:space-between;
+    align-items: center ;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding:30px;
+}
+
+.offers i{
+    font-size:20px;
+}
+
+.offers .icon{
+    text-align: center;
+}
+
+/* Select Items */
+
+.change-color {
+    margin-bottom: 10px;
+}
+
+.change-color .thumb-box{
+    margin: 10px 10px 10px 0;
+    width: 40px;
+    display: inline-block;
+}
+
+.change-size select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border-color: rgb(189, 189, 189);
+    margin-top: 10px;
+}
+
+.description ul {
+    padding-left: 17px;
+    font-size: 15px;
+    line-height: 1.3rem;
+    margin-left: 15px;
+}
+
+.product-card{
+    height: fit-content;
+    width:350px;
+    border: 2px solid;
+    margin: 20px;
+    border-radius: 5%;
+}
+
+.product-card .details .cart{
+    height: 35px;
+    width: 250px;
+    cursor: pointer;
+    border-radius: 30pt;
+    background-color: #ff9327;
+}
+
+.product-card .details .cart:hover{
+    height: 35px;
+    width: 250px;
+    cursor: pointer;
+    border-radius: 30pt;
+    color: whitesmoke;
+    background-color: #ffa954;
+}
+
+
+/************************************************************************************************************************/
+

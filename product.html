@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazkart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assest/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rY1q0UcD9UEz5Zkj6tC/jAzbrxTtqL2nU+MVLFLGzBqRljjIAUnYC3NUD1ZxpXMR" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+
+            <div class="nav-address">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option selected="selected">All</option>
+                    <option>Automotive</option>
+                    <option>Baby</option>
+                    <option>Beauty &amp; Personal Care</option>
+                    <option>Books</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Home &amp; Kitchen</option>
+                    <option>Luggage</option>
+                    <option>Medicine</option>
+                    <option>Pet Care</option>
+                    <option>Sports &amp; Outdoors</option>
+                    <option>Tools &amp; Home Improvement</option>
+                    <option>Toys &amp; Games</option>
+                </select>
+
+                <input class="search-input" type="text" id="search-input" autocomplete="off" placeholder="Search....">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="nav-language">
+                <i class="fa-solid fa-globe"></i>
+                <select id="language-select">
+                    <option value="en" selected="selected">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="es">ES</option>
+                    <option value="de">DE</option>
+                    <option value="it">IT</option>
+                </select>
+            </div>
+
+            <div class="nav-signin">
+                <p><span id="greeting">Hello, sign in</span></p>
+            </div>
+            <div class="nav-returns">
+                <p><span>Returns</span></p>
+                <p class="nav-second">
+                    & Orders
+                    <i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+                </p>
+            </div>
+
+            <div class="nav-cart" onclick="cartpage()">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+            </div>
+        </div>
+
+        <div class="bottom-panel">
+            <div class="panel-alt">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-options">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+        </div>
+    </header>
+
+<!--**************************************************************************************************************************************-->
+
+    <section id="product-info">
+        <div class="item-image-parent" id="output1">
+        </div>
+        <div class="item-info-parent" id="output2">
+        </div>
+        <div class="product-card" id="output3">       
+        </div>
+    </section>
+    <section class="product-details" style="margin: 4% 2%;" id="output4">
+    </section>
+
+<!--**************************************************************************************************************************************-->
+
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+                <li>Get to Know Us</li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Amazkart Newsletter</a></li>
+                <li><a href="#">About Amazkart</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Press Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Amazkart Devices</a></li>
+                <li><a href="#">Amazkart Science</a></li>
+            </ul>
+            <ul>
+                <li>Make Money with Us</li>
+                <li><a href="#">Sell products on Amazkart</a></li>
+                <li><a href="#">Sell on Amazkart Business</a></li>
+                <li><a href="#">Sell apps on Amazkart</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Advertise Your Products</a></li>
+                <li><a href="#">Self-Publish with Us</a></li>
+                <li><a href="#">Host an Amazkart Hub</a></li>
+                <li><a href="#">See More Make Money with Us</a></li>
+            </ul>
+            <ul>
+                <li>Amazkart Payment Products</li>
+                <li><a href="#">Amzon Business Card</a></li>
+                <li><a href="#">Shop with Points</a></li>
+                <li><a href="#">Reload Your Balance</a></li>
+                <li><a href="#">Amazkart Currency Converter</a></li>
+            </ul>
+            <ul>
+                <li>Let Us Help You</li>
+                <li><a href="#">Amazkart and COVID-19</a></li>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Your Orders</a></li>
+                <li><a href="#">Shipping Rates & Policies</a></li>
+                <li><a href="#">Return & Replacements</a></li>
+                <li><a href="#">Manage Your Content and Devices</a></li>
+                <li><a href="#">Amazkart Assistant</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+
+        <div class="foot-panel3">
+            <div class="logo">
+
+            </div>
+        </div>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-1823, Amazkart.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        
+        $(document).ready(function() {
+          var searchOptions = [
+            "Arts & Crafts",
+            "Automotive",
+            "Baby",
+            "Beauty & Personal Care",
+            "Books",
+            "Boys' Fashion",
+            "Computers",
+          ];
+
+          $("#search-input").autocomplete({
+            source: searchOptions,
+            autoFocus: true
+          });
+        });
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let ID = urlParams.get('data');
+        ID--;
+
+        $.ajax({ method: 'POST', url: 'ecomm.php', data:{func:'showimage'}, success:function(result){
+                let data = JSON.parse( result );
+                console.log(result);
+                let row = data[ID];
+                let html1 = `<div class="item-image-lists" data-serial="${row.productID}">
+                                <div class="item-list-vertical"  >                    
+                                    <div class="thumb-box">
+                                        <img src="${row.thumb1}" alt="thumbnail" class="thumbimg" />
+                                    </div>
+                                    <div class="thumb-box">
+                                        <img src="${row.thumb2}" alt="thumbnail" class="thumbimg"/>
+                                    </div>
+                                    <div class="thumb-box">
+                                        <img src="${row.thumb3}" alt="thumbnail" class="thumbimg"/>
+                                    </div>
+                                    <div class="thumb-box">
+                                        <img src="${row.thumb4}" alt="thumbnail" class="thumbimg"/>
+                                    </div>
+                                    <div class="thumb-box">
+                                        <img src="${row.thumb5}" alt="thumbnail" class="thumbimg" />
+                                    </div>
+                                </div>
+                                <div class="item-image-main">
+                                    <img src="${row.productimage}" alt="default" class="mainimg"/>
+                                </div>
+                            </div>`
+                    
+                    $('#output1').html( html1 );
+
+                    $('.thumbimg').click(function() {
+                    let newImageSrc = $(this).attr('src');
+
+                    $('.mainimg').attr('src', newImageSrc);
+                });
+
+                let html2 = `<div data-serial="${row.productID}">
+                                <div class="main-info">
+                                    <h4>${row.productbrand}</h4>
+                                    <h4>${row.productname}</h4>
+                                    <div class="star-rating">
+                                        <span>★★★★</span>★      
+                                    </div>
+                                    <div class="rates">
+                                        <p>Price: <span id="price">₹ ${row.mrp}</span></p>
+                                        <p>Inclusive of all tax.</p>
+                                        
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <div class = "offers">
+                                    <div class="icon">
+                                        <i class="fa-sharp fa-solid fa-truck-fast"></i>
+                                        <p>Fast Delivery</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-archive"></i>
+                                        <br>
+                                        <p>7 day replacement</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-shield"></i>
+                                        <br>
+                                        <p>Warranty</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-trophy"></i>
+                                        <br>
+                                        <p>Top Brand</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                
+                                <div class="select-items">                                   
+                                    <div class="description">
+                                        ${row.productdescription1}<br>
+                                        ${row.productdescription2}<br>
+                                        ${row.productdescription3}<br>
+                                        ${row.productdescription4}<br>
+                                        ${row.productdescription5}<br>
+                                        ${row.productdescription6}<br>
+                                        ${row.productdescription7}<br>
+                                        ${row.productdescription8}<br>
+                                        
+                                    </div>
+                                </div>
+                            </div>`
+                    
+                    $('#output2').html( html2 );
+
+                    let quantity=row.quantity;
+                let xyz = "In Stock";
+
+                if(quantity<=5 && quantity>0)
+                {
+                    xyz="Low stock";
+                }
+                else if(quantity==0)
+                {
+                    xyz="Out of stock";
+                }
+
+                let html3 = `<div data-serial="${row.productID}">
+                                <div class="details" style="margin: 10px 10px;">
+                                    <h2>₹ ${row.mrp}</h2><br>
+                                    <a href="#">FREE delivery</a><br>
+                                    <p>Friday, 14 July on your first order. <a href="#">Details</a></p><br>
+                                    <p>Or fastest delivery Tomorrow, 12 July. Order within 1 hr 11 mins. <a href="#">Details</a></p><br>
+                                    <i class="fa-solid fa-location-dot"><p>Select delivery location</p></i>
+                                    <p>Quantity :  ${row.quantity}</p>
+                                    <p>${xyz}</p><br>
+                                    <button onclick="cart(${row.productID},${row.quantity})" class="cart">Add to cart</button>
+                                </div>
+                            </div>`
+                    
+                    $('#output3').html( html3 );
+
+                    let html4 = `<div class="description" data-serial="${row.productID}">
+                                <h2>Product Description</h2>
+                                ${row.subdescription1}<br>
+                                ${row.subdescription2}<br>
+                                ${row.subdescription3}<br>
+                                ${row.subdescription4}<br>
+                                ${row.subdescription5}<br>
+                                ${row.subdescription6}<br>
+                                ${row.subdescription7}<br>
+                                ${row.subdescription8}<br>
+                                ${row.subdescription9}<br>
+                                ${row.subdescription10}<br>
+                            </div>`
+                    
+                    $('#output4').html( html4 );
+
+                }
+        });
+
+            function cart(index1,index2)
+            {
+                let productID = index1;
+                let quantity = index2-1;
+                $.ajax({ method: 'POST', url: 'ecomm.php', data:{func:'addtocart',productID,quantity}, success:function(response){
+                    var data = JSON.parse(response);
+
+                    if (data.result == 'success'){
+                    iziToast.success({
+                        title: 'Success',
+                        message: 'Product added to cart successfully',
+                        position: 'topCenter',
+                        messageSize: '50px',
+                        });
+                    }
+                    else {
+                        iziToast.error({
+                            title: data.reason,
+                            position: 'bottomCenter',
+                            messageSize: '50px',
+                        });
+                    }
+                },
+                });
+            }
+            function cartpage(){
+                window.location.href ='cart.html'
+            }
+            const userName = localStorage.getItem('userName');
+            if (userName) {
+                document.getElementById('greeting').innerText = `Welcome ${userName}`;
+            }
+    </script>
+    <script>
+        const languageSelect = document.getElementById("language-select");
+        function redirectToSubcategoryPage(productId, categoryId) {
+            window.location.href = `subcategory.html?id=${productId}&category=${categoryId}`;
+        }
+
+        languageSelect.addEventListener("change", function () {
+            const selectedCategory = languageSelect.value;
+            const categoryMap = {
+                "Baby": 1,
+                "Beauty & Personal Care": 2,
+                "Electronics": 3,
+                "Fashion": 4,
+                "Home & Kitchen": 5,
+                "Luggage": 6,
+                "Medicine": 7,
+                "Pet Care": 8,
+                "Sports & Outdoors": 9,
+                "Tools & Home Improvement": 10,
+                "Toys & Games": 11,
+            };
+            const categoryId = categoryMap[selectedCategory];
+
+            redirectToSubcategoryPage("", categoryId);
+        });
+
+        $(document).ready(function () {
+
+            var searchOptions = [
+                "All",
+                "Baby",
+                "Beauty & Personal Care",
+                "Electronics",
+                "Fashion",
+                "Home & Kitchen",
+                "Luggage",
+                "Medicine",
+                "Pet Care",
+                "Sports & Outdoors",
+                "Tools & Home Improvement",
+                "Toys & Games",
+            ];
+
+            $("#search-input").autocomplete({
+                source: searchOptions,
+                autoFocus: true,
+                select: function(event, ui) {
+                    const selectedCategory = ui.item.value;
+                    if (selectedCategory !=="All") {
+                        const categoryId = searchOptions.indexOf(selectedCategory);
+                        const url = `subcategory.html?id=${categoryId}`;
+                        window.location.href = url;
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+</html>

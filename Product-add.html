@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Add Products</title>
+  <link rel="stylesheet" href="./Assest/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Include Izitoast CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+
+  <!-- Include Izimodal CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izimodal/css/iziModal.min.css">
+</head>
+
+<body>
+  <div class="bottom-panel">
+    <div class="panel-options">
+      <p>Add Products</p>
+      <p>Inventory</p>
+      <p>Manage Orders</p>
+      <p>Analytics</p>
+    </div>
+    <div class="panel-options">
+      <p>Settings</p>
+      <p>Help</p>
+      <p>Sign Out</p>
+    </div>
+  </div>
+  <div id="add-products-section">
+    <div class="container"><br>
+      <form id="add-product-form">
+        <div class="form-group">
+          <label for="main-category">Main Category</label>
+          <select class="form-control" id="main-category">
+            <option value="None" selected>None</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="sub-category-group" style="display: none;">
+          <label for="sub-category">Sub Category</label>
+          <select class="form-control" id="sub-category" disabled>
+            <option value="None" selected>None</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="aksin-code-group" style="display: none;">
+          <label for="aksin-code">AKSIN Code</label>
+          <input type="text" class="form-control" id="aksin-code" placeholder="Enter AKSIN Code">
+        </div>
+        <div class="form-group" id="product-name-group" style="display: none;">
+          <label for="product-name">Product Name</label>
+          <input type="text" class="form-control" id="product-name" placeholder="Enter Product Name">
+        </div>
+        <div class="form-group" id="product-brand-group" style="display: none;">
+          <label for="product-brand">Product Brand</label>
+          <input type="text" class="form-control" id="product-brand" placeholder="Enter Product Brand">
+        </div>
+        <div class="form-group" id="product-price-group" style="display: none;">
+          <label for="product-price">Product MRP</label>
+          <input type="number" class="form-control" id="product-price" placeholder="Enter Product MRP">
+        </div>
+        <div class="form-group" id="product-quantity-group" style="display: none;">
+          <label for="product-quantity">Quantity Available</label>
+          <input type="number" class="form-control" id="product-quantity" placeholder="Enter Quantity Available">
+        </div>
+        <button type="button" class="btn btn-primary" id="add-product-button" style="display: none;" onclick="adddetails()">Add Description</button>
+      </form>
+
+      <form id="add-description-form" style="display: none;">
+        <div class="form-group">
+          <label for="description1">Description 1*</label>
+          <input type="text" class="form-control" id="description1" placeholder="Enter Description 1">
+        </div>
+        <div class="form-group">
+          <label for="description2">Description 2*</label>
+          <input type="text" class="form-control" id="description2" placeholder="Enter Description 2">
+        </div>
+        <div class="form-group">
+          <label for="description3">Description 3*</label>
+          <input type="text" class="form-control" id="description3" placeholder="Enter Description 3">
+        </div>
+        <div class="form-group">
+          <label for="description4">Description 4</label>
+          <input type="text" class="form-control" id="description4" placeholder="Enter Description 4">
+        </div>
+        <div class="form-group">
+          <label for="description5">Description 5</label>
+          <input type="text" class="form-control" id="description5" placeholder="Enter Description 5">
+        </div>
+        <div class="form-group">
+          <label for="description6">Description 6</label>
+          <input type="text" class="form-control" id="description6" placeholder="Enter Description 6">
+        </div>
+        <div class="form-group">
+          <label for="description7">Description 7</label>
+          <input type="text" class="form-control" id="description7" placeholder="Enter Description 7">
+        </div>
+        <div class="form-group">
+          <label for="description8">Description 8</label>
+          <input type="text" class="form-control" id="description8" placeholder="Enter Description 8">
+        </div>
+        <button type="button" class="btn btn-primary" id="add-description-button" onclick="adddesc()">Add Sub-Description</button>
+      </form>
+
+      <form id="add-sub-description-form" style="display: none;">
+        <div class="form-group">
+          <label for="sub-description1">Sub Description 1*</label>
+          <input type="text" class="form-control" id="sub-description1" placeholder="Enter Sub Description 1">
+        </div>
+        <div class="form-group">
+          <label for="sub-description2">Sub Description 2*</label>
+          <input type="text" class="form-control" id="sub-description2" placeholder="Enter Sub Description 2">
+        </div>
+        <div class="form-group">
+          <label for="sub-description3">Sub Description 3*</label>
+          <input type="text" class="form-control" id="sub-description3" placeholder="Enter Sub Description 3">
+        </div>
+        <div class="form-group">
+          <label for="sub-description4">Sub Description 4</label>
+          <input type="text" class="form-control" id="sub-description4" placeholder="Enter Sub Description 4">
+        </div>
+        <div class="form-group">
+          <label for="sub-description5">Sub Description 5</label>
+          <input type="text" class="form-control" id="sub-description5" placeholder="Enter Sub Description 5">
+        </div>
+        <div class="form-group">
+          <label for="sub-description6">Sub Description 6</label>
+          <input type="text" class="form-control" id="sub-description6" placeholder="Enter Sub Description 6">
+        </div>
+        <div class="form-group">
+          <label for="sub-description7">Sub Description 7</label>
+          <input type="text" class="form-control" id="sub-description7" placeholder="Enter Sub Description 7">
+        </div>
+        <div class="form-group">
+          <label for="sub-description8">Sub Description 8</label>
+          <input type="text" class="form-control" id="sub-description8" placeholder="Enter Sub Description 8">
+        </div>
+        <button type="button" class="btn btn-primary" id="add-sub-description-button" onclick="addsubdesc()">Add Images</button>
+      </form>
+
+      <form id="add-image-form" style="display: none;">
+        <div class="form-group">
+          <label for="main-image">Main Image URL*</label>
+          <input type="text" class="form-control" id="main-image" placeholder="Enter Main Image URL">
+        </div>
+        <div class="form-group">
+          <label for="image2">Image 2</label>
+          <input type="text" class="form-control" id="image2" placeholder="Enter Image 2 URL">
+        </div>
+        <div class="form-group">
+          <label for="image3">Image 3</label>
+          <input type="text" class="form-control" id="image3" placeholder="Enter Image 3 URL">
+        </div>
+        <div class="form-group">
+          <label for="image4">Image 4</label>
+          <input type="text" class="form-control" id="image4" placeholder="Enter Image 4 URL">
+        </div>
+        <div class="form-group">
+          <label for="image5">Image 5</label>
+          <input type="text" class="form-control" id="image5" placeholder="Enter Image 5 URL">
+        </div>
+        <button type="button" class="btn btn-primary" id="add-image-button" onclick="addimage()">Add Product</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Include Izitoast JS -->
+  <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+
+  <!-- Include Izimodal JS -->
+  <script src="https://cdn.jsdelivr.net/npm/izimodal/js/iziModal.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the add product form, add description form, add sub-description form, and add image form
+      var addProductForm = document.getElementById("add-product-form");
+      var addDescriptionForm = document.getElementById("add-description-form");
+      var addSubDescriptionForm = document.getElementById("add-sub-description-form");
+      var addImageForm = document.getElementById("add-image-form");
+
+      // Function to show the add description form
+      function showAddDescriptionForm() {
+        document.getElementById("sub-category-group").style.display = "none";
+        document.getElementById("aksin-code-group").style.display = "none";
+        document.getElementById("product-name-group").style.display = "none";
+        document.getElementById("product-brand-group").style.display = "none";
+        document.getElementById("product-price-group").style.display = "none";
+        document.getElementById("product-quantity-group").style.display = "none";
+        document.getElementById("add-product-button").style.display = "none";
+        addDescriptionForm.style.display = "block";
+      }
+
+      // Function to show the add sub-description form
+      function showAddSubDescriptionForm() {
+        document.getElementById("sub-category-group").style.display = "none";
+        document.getElementById("aksin-code-group").style.display = "none";
+        document.getElementById("product-name-group").style.display = "none";
+        document.getElementById("product-brand-group").style.display = "none";
+        document.getElementById("product-price-group").style.display = "none";
+        document.getElementById("product-quantity-group").style.display = "none";
+        document.getElementById("add-product-button").style.display = "none";
+        addDescriptionForm.style.display = "none";
+        addSubDescriptionForm.style.display = "block";
+      }
+
+      // Function to show the add image form
+      function showAddImageForm() {
+        document.getElementById("sub-category-group").style.display = "none";
+        document.getElementById("aksin-code-group").style.display = "none";
+        document.getElementById("product-name-group").style.display = "none";
+        document.getElementById("product-brand-group").style.display = "none";
+        document.getElementById("product-price-group").style.display = "none";
+        document.getElementById("product-quantity-group").style.display = "none";
+        document.getElementById("add-product-button").style.display = "none";
+        addDescriptionForm.style.display = "none";
+        addSubDescriptionForm.style.display = "none";
+        addImageForm.style.display = "block";
+      }
+
+      // Function to show the add product form and hide the add description, add sub-description, and add image forms
+      function showAddProductForm() {
+        document.getElementById("sub-category-group").style.display = "block";
+        document.getElementById("aksin-code-group").style.display = "block";
+        document.getElementById("product-name-group").style.display = "block";
+        document.getElementById("product-brand-group").style.display = "block";
+        document.getElementById("product-price-group").style.display = "block";
+        document.getElementById("product-quantity-group").style.display = "block";
+        document.getElementById("add-product-button").style.display = "block";
+        addProductForm.style.display = "block";
+        addDescriptionForm.style.display = "none";
+        addSubDescriptionForm.style.display = "none";
+        addImageForm.style.display = "none";
+      }
+
+      // Fetch main categories from server
+      function fetchMainCategories() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "fetch_categories.php?action=fetch_main_categories", true); // Modify the URL to your server-side script
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var mainCategories = JSON.parse(xhr.responseText);
+
+            var mainCategorySelect = document.getElementById("main-category");
+
+            // Clear the previous options
+            mainCategorySelect.innerHTML = "";
+
+            // Add the default option
+            var defaultOption = document.createElement("option");
+            defaultOption.text = "None";
+            defaultOption.value = "None";
+            mainCategorySelect.appendChild(defaultOption);
+
+            // Populate the main category dropdown with options
+            for (var i = 0; i < mainCategories.length; i++) {
+              var option = document.createElement("option");
+              option.text = mainCategories[i];
+              option.value = mainCategories[i];
+              mainCategorySelect.appendChild(option);
+            }
+          }
+        };
+        xhr.send();
+      }
+
+      // Fetch sub categories from server based on the selected main category
+      function fetchSubCategories(mainCategory) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "fetch_categories.php?action=fetch_sub_categories&mainCategory=" + encodeURIComponent(mainCategory), true); // Modify the URL to your server-side script
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var subCategories = JSON.parse(xhr.responseText);
+
+            var subCategorySelect = document.getElementById("sub-category");
+
+            // Clear the previous options
+            subCategorySelect.innerHTML = "";
+
+            // Add the default option
+            var defaultOption = document.createElement("option");
+            defaultOption.text = "None";
+            defaultOption.value = "None";
+            subCategorySelect.appendChild(defaultOption);
+
+            // Populate the subcategory dropdown with options
+            for (var i = 0; i < subCategories.length; i++) {
+              var option = document.createElement("option");
+              option.text = subCategories[i];
+              option.value = subCategories[i];
+              subCategorySelect.appendChild(option);
+            }
+
+            // Enable the subcategory select
+            subCategorySelect.disabled = false;
+
+            // Show the form inputs
+            showAddProductForm();
+          }
+        };
+        xhr.send();
+      }
+
+      // Call the fetchMainCategories function
+      fetchMainCategories();
+
+      // Handle main category change
+      document.getElementById("main-category").addEventListener("change", function() {
+        var selectedMainCategory = this.value;
+
+        if (selectedMainCategory === "None") {
+          // Reset the subcategory select
+          var subCategorySelect = document.getElementById("sub-category");
+          subCategorySelect.disabled = true;
+          subCategorySelect.value = "None";
+
+          // Hide the form inputs
+          showAddProductForm();
+        } else {
+          // Fetch sub categories based on the selected main category
+          fetchSubCategories(selectedMainCategory);
+        }
+      });
+
+      // Handle add product button click
+      document.getElementById("add-product-button").addEventListener("click", function() {
+        var aksinCode = document.getElementById("aksin-code").value;
+        var productName = document.getElementById("product-name").value;
+        var productBrand = document.getElementById("product-brand").value;
+        var productPrice = document.getElementById("product-price").value;
+        var productMainCategory = document.getElementById("main-category").value;
+        var productSubCategory = document.getElementById("sub-category").value;
+        var productQuantity = document.getElementById("product-quantity").value;
+
+        if (
+          aksinCode === "" ||
+          productName === "" ||
+          productBrand === "" ||
+          productPrice === "" ||
+          productMainCategory === "None" ||
+          productSubCategory === "None" ||
+          productQuantity === ""
+        ) {
+          iziToast.warning({
+            title: "Warning",
+            message: "Please enter all the product details!",
+            position: "topRight"
+          });
+        } else {
+          // Hide the add product form and show the add description form
+          showAddDescriptionForm();
+        }
+      });
+
+      // Handle add description button click
+      document.getElementById("add-description-button").addEventListener("click", function() {
+        var description1 = document.getElementById("description1").value;
+        var description3 = document.getElementById("description3").value;
+
+        if (description1 === "" || description3 === "") {
+          iziToast.warning({
+            title: "Warning",
+            message: "Please enter the mandatory descriptions!",
+            position: "topRight"
+          });
+        } else {
+          // Hide the add description form and show the add sub-description form
+          showAddSubDescriptionForm();
+        }
+      });
+
+      // Handle add sub-description button click
+      document.getElementById("add-sub-description-button").addEventListener("click", function() {
+        var subDescription1 = document.getElementById("sub-description1").value;
+        var subDescription3 = document.getElementById("sub-description3").value;
+
+        if (subDescription1 === "" || subDescription3 === "") {
+          iziToast.warning({
+            title: "Warning",
+            message: "Please enter the mandatory sub-descriptions!",
+            position: "topRight"
+          });
+        } else {
+          // Hide the add sub-description form and show the add image form
+          showAddImageForm();
+        }
+      });
+
+      // Handle add image button click
+      document.getElementById("add-image-button").addEventListener("click", function() {
+        var mainImage = document.getElementById("main-image").value;
+        var image2 = document.getElementById("image2").value;
+        var image3 = document.getElementById("image3").value;
+        var image4 = document.getElementById("image4").value;
+        var image5 = document.getElementById("image5").value;
+
+        if (mainImage === "") {
+          iziToast.warning({
+            title: "Warning",
+            message: "Please enter the main image URL!",
+            position: "topRight"
+          });
+        } else {
+          // Perform the logic to add the product with images here
+          // ...
+
+          iziToast.show({
+            title: "Congratulations",
+            message: "Product Successfully Added",
+            position: "center",
+            backgroundColor: "#4CAF50",
+            progressBarColor: "#FFFFFF",
+            titleColor: "#FFFFFF",
+            messageColor: "#FFFFFF",
+            timeout: 3000
+          });
+
+          // Reset the forms and switch back to the add product form
+          addProductForm.reset();
+          addDescriptionForm.reset();
+          addSubDescriptionForm.reset();
+          addImageForm.reset();
+          showAddProductForm();
+        }
+      });
+    });
+
+  function adddetails()
+  {
+    let subcategory = $('#sub-category').val();
+    let maincategory = $('#main-category').val();
+    let aksincode = $('#aksin-code').val();
+    let productname = $('#product-name').val();
+    let productbrand = $('#product-brand').val();
+    let productprice = $('#product-price').val();
+    let productquantity = $('#product-quantity').val();
+
+    $.ajax({ method: 'POST', url: 'fetch_categories.php', data:{func:'add1',subcategory,maincategory,aksincode,productname,productbrand,productprice,productquantity}, success:function(result){
+
+      }
+    });
+
+
+  }
+
+  function adddesc()
+  {
+    let description1 = $('#description1').val();
+    let description2 = $('#description2').val();
+    let description3 = $('#description3').val();
+    let description4 = $('#description4').val();
+    let description5 = $('#description5').val();
+    let description6 = $('#description6').val();
+    let description7 = $('#description7').val();
+    let description8 = $('#description8').val();
+
+    $.ajax({ method: 'POST', url: 'fetch_categories.php', data:{func:'add2',description1,description2,description3,description4,description5,description6,description7,description8}, success:function(result){
+
+}
+});
+
+  }
+
+  function addsubdesc()
+  {
+    let subdescription1 = $('#sub-description1').val();
+    let subdescription2 = $('#sub-description2').val();
+    let subdescription3 = $('#sub-description3').val();
+    let subdescription4 = $('#sub-description4').val();
+    let subdescription5 = $('#sub-description5').val();
+    let subdescription6 = $('#sub-description6').val();
+    let subdescription7 = $('#sub-description7').val();
+    let subdescription8 = $('#sub-description8').val();
+
+    $.ajax({ method: 'POST', url: 'fetch_categories.php', data:{func:'add3',subdescription1,subdescription2,subdescription3,subdescription4,subdescription5,subdescription6,subdescription7,subdescription8}, success:function(result){
+
+}
+});
+
+  }
+
+  function addimage()
+  {
+    let mainimage = $('#main-image').val();
+    let image2 = $('#image2').val();
+    let image3 = $('#image3').val();
+    let image4 = $('#image4').val();
+    let image5 = $('#image5').val();
+
+    $.ajax({ method: 'POST', url: 'fetch_categories.php', data:{func:'add4',mainimage,image2,image3,image4,image5}, success:function(result){
+
+}
+});
+
+  }
+  
+  </script>
+
+</body>
+
+</html>
